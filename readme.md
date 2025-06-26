@@ -1,101 +1,77 @@
-### 🧪 **DevOps Intern Assignment: Nginx Reverse Proxy + Docker**
+📘 DevOps Assignment – Q2 2025
+This is a simple DevOps project with two backend services and an Nginx reverse proxy, all running in Docker containers using Docker Compose.
 
-You are expected to set up a simple system where:
+🛠 Setup Instructions
+bash
+Copy
+Edit
+# Clone the repo
+git clone https://github.com/<your-username>/devops-assignment-q2-2025.git
+cd devops-assignment-q2-2025
 
-1. **Two Dockerized backend services** (can be dummy services) run on different ports.
-2. An **Nginx reverse proxy** (also in a Docker container) routes:
+# Build and run everything
+docker-compose up --build
+Once running, access the services via:
 
-   * `/service1` requests to backend service 1
-   * `/service2` requests to backend service 2
-3. All services must be accessible via a single port (e.g., `localhost:8080`).
+http://localhost:8080/service1 → returns Go service JSON
 
----
+http://localhost:8080/service2 → returns Python Flask service JSON
 
-### ✅ **Requirements**
+🔀 Routing Logic
+Nginx reverse proxy routes incoming traffic:
 
-1. Use Docker Compose to bring up the entire system.
-2. Each backend service should respond with a JSON payload like:
+Path	Backend Service	Route Mapped To
+/service1	Go backend (service1)	/ping
+/service2	Python Flask (service2)	/hello
 
-   ```json
-   {"service": "service1"}
-   ```
-3. The Nginx config should support:
+This is done using nginx/default.conf with proxy_pass.
 
-   * Routing based on URL path prefix (`/service1`, `/service2`)
-   * Logging incoming requests with timestamp and path
-4. The system should work with a single command:
+✅ Bonus Implemented
+✅ Clean Docker setup for Go and Python
 
-   ```bash
-   docker-compose up --build
-   ```
-5. Bonus: Add a health check for both services and show logs of successful routing.
+✅ Reverse proxy with Nginx
 
----
+✅ Docker Compose orchestration
 
-### 📁 Suggested Project Structure
+✅ Basic Nginx logging enabled
 
-```
+✅ Health checks (add this if you’ve included it)
+
+🖼 Project Structure
+go
+Copy
+Edit
 .
 ├── docker-compose.yml
 ├── nginx
 │   ├── default.conf
 │   └── Dockerfile
 ├── service_1
-│   ├── app.py
-│   └── Dockerfile
+│   ├── Dockerfile
+│   └── main.go
 ├── service_2
-│   ├── app.py
-│   └── Dockerfile
+│   ├── Dockerfile
+│   └── app.py
 └── README.md
-```
+✅ STEP 4: Final Check & Submit
+✅ Open the repo in browser
 
----
+✅ Confirm all files are visible
 
-### 📦 Tech Constraints
+✅ Share the link with the reviewer (e.g., paste it in the submission form)
 
-* Nginx must run in a Docker container, not on host
-* Use bridge networking (no host networking)
+Example:
 
----
+bash
+Copy
+Edit
+GitHub Repository: https://github.com/<your-username>/devops-assignment-q2-2025
+If you’d like, I can:
 
-### 📝 Submission Instructions
+Review your final GitHub repo before you submit
 
-1. Upload your project to GitHub or GitLab.
-2. Include a short `README.md` with:
+Help you polish README further
 
-   * Setup instructions
-   * How routing works
-   * Any bonus you implemented
-3. Deadline: **1 week**
-4. Bonus points for:
+Help you add logs or health checks for bonus
 
-   * Logging clarity
-   * Clean and modular Docker setup
-   * Healthcheck or automated test script
-
----
-
-### ❓FAQs
-
-**Q: Is this a full-time role?**
-Yes. You would need to be in office in Bangalore.
-
-**Q: Is there a stipend?**
-Yes. 20k INR per month
-
-**Q: How many positions are open?**
-Two positions are open.
-
-**Q: I am still in college. Can I apply?**
-Unfortunately, we are looking for post-college candidates.
-
-**Q: Can I reach out for doubts?**
-No — due to the volume of submissions. Please use your creativity and assumptions where needed.
-
-**Q: Can I use ChatGPT or Copilot?**
-Yes, feel free to use AI tools — we care about your implementation and understanding.
-
-**Q: This feels like a lot for an intern assignment.**
-We agree it’s non-trivial — we’ve received many applications, so this helps us filter based on quality.
-
-
+Just drop your GitHub link and I’ll take a look! 🚀
