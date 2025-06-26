@@ -75,16 +75,6 @@ Email: satyapadamati5@gmail.com
 GitHub: https://github.com/satyapadamati
 
 
-Execution screens
-![Screenshot (4)](https://github.com/user-attachments/assets/9de102f9-2515-46cf-b4b4-a9fb0302640d)
-![Screenshot (3)](https://github.com/user-attachments/assets/9acc910e-b01c-44b5-b04c-adf9be8d3fec)
-![Screenshot (2)](https://github.com/user-attachments/assets/a647f69e-bbc8-4ee3-88d0-9dd39802e076)
-hots:
-
-
-
-
-
 
 
 
