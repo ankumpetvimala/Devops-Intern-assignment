@@ -1,77 +1,76 @@
-📘 DevOps Assignment – Q2 2025
-This is a simple DevOps project with two backend services and an Nginx reverse proxy, all running in Docker containers using Docker Compose.
+# DevOps Assignment – Nginx Reverse Proxy + Docker
 
-🛠 Setup Instructions
-bash
-Copy
-Edit
-# Clone the repo
-git clone https://github.com/<your-username>/devops-assignment-q2-2025.git
+This project sets up a simple microservices system using **Docker Compose**. It includes:
+
+- Two backend services (one in Go, one in Python)
+- An **Nginx reverse proxy** container that routes traffic to these services based on the URL path
+- Health checks and logging support (bonus)
+
+---
+
+## ✅ Services Overview
+
+| Service     | Description                             | Port  |
+|-------------|-----------------------------------------|-------|
+| service1    | Go backend, responds with service info  | 8001  |
+| service2    | Python Flask backend, responds with info| 8002  |
+| nginx       | Reverse proxy, handles all routing      | 8080  |
+
+---
+
+## ⚙️ Setup Instructions
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/satyapadamati/devops-assignment-q2-2025.git
 cd devops-assignment-q2-2025
 
-# Build and run everything
+2. Run with Docker Compose
+
 docker-compose up --build
-Once running, access the services via:
 
-http://localhost:8080/service1 → returns Go service JSON
+3. Access the services via Nginx
+URL	Response
+http://localhost:8080/service1/ping	{ "service": "service1" }
+http://localhost:8080/service2/hello	{ "service": "service2" }
 
-http://localhost:8080/service2 → returns Python Flask service JSON
+Replace localhost with your EC2 IP if running on AWS, e.g., http://13.220.209.50:8080/...
 
-🔀 Routing Logic
-Nginx reverse proxy routes incoming traffic:
+🌐 How Routing Works
+Nginx routes incoming requests based on the URL path:
 
-Path	Backend Service	Route Mapped To
-/service1	Go backend (service1)	/ping
-/service2	Python Flask (service2)	/hello
+/service1/ → forwards to service1:8001
 
-This is done using nginx/default.conf with proxy_pass.
+/service2/ → forwards to service2:8002
 
-✅ Bonus Implemented
-✅ Clean Docker setup for Go and Python
+This is configured in nginx/default.conf.
 
-✅ Reverse proxy with Nginx
+🩺 Health Check (Bonus)
+Each service exposes a basic HTTP endpoint:
 
-✅ Docker Compose orchestration
+GET /ping for service1
 
-✅ Basic Nginx logging enabled
+GET /hello for service2
 
-✅ Health checks (add this if you’ve included it)
+These return static JSON indicating the service is running.
 
-🖼 Project Structure
-go
-Copy
-Edit
-.
+📁 Project Structure
+
 ├── docker-compose.yml
 ├── nginx
 │   ├── default.conf
 │   └── Dockerfile
 ├── service_1
-│   ├── Dockerfile
-│   └── main.go
+│   ├── main.go
+│   └── Dockerfile
 ├── service_2
-│   ├── Dockerfile
-│   └── app.py
+│   ├── app.py
+│   └── Dockerfile
 └── README.md
-✅ STEP 4: Final Check & Submit
-✅ Open the repo in browser
 
-✅ Confirm all files are visible
+👨‍💻 Author
+Satyakiran Padamati
+Email: satyapadamati5@gmail.com
+GitHub: https://github.com/satyapadamati
 
-✅ Share the link with the reviewer (e.g., paste it in the submission form)
-
-Example:
-
-bash
-Copy
-Edit
-GitHub Repository: https://github.com/<your-username>/devops-assignment-q2-2025
-If you’d like, I can:
-
-Review your final GitHub repo before you submit
-
-Help you polish README further
-
-Help you add logs or health checks for bonus
-
-Just drop your GitHub link and I’ll take a look! 🚀
