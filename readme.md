@@ -1,78 +1,94 @@
-# DevOps Assignment – Nginx Reverse Proxy + Docker
+# 🔁 Nginx Reverse Proxy with Docker Compose
 
-This project sets up a simple microservices system using **Docker Compose**. It includes:
+This project sets up a reverse proxy using **Nginx** and **Docker Compose** to route traffic to two microservices:
 
-- Two backend services (one in Go, one in Python)
-- An **Nginx reverse proxy** container that routes traffic to these services based on the URL path
-- Health checks and logging support (bonus)
+- 🐍 A Python application
+- 🦫 A Golang application
 
----
-
-## ✅ Services Overview
-
-| Service     | Description                             | Port  |
-|-------------|-----------------------------------------|-------|
-| service1    | Go backend, responds with service info  | 8001  |
-| service2    | Python Flask backend, responds with info| 8002  |
-| nginx       | Reverse proxy, handles all routing      | 8080  |
+The Nginx container handles incoming HTTP requests and routes them based on the path prefix (`/service1`, `/service2`).
 
 ---
 
-## ⚙️ Setup Instructions
+## 📁 Project Structure
 
-### 1. Clone the repository
+project-root/
 
-```bash
-git clone https://github.com/satyapadamati/devops-assignment-q2-2025.git
-cd devops-assignment-q2-2025
+│ 
 
-2. Run with Docker Compose
+   ├── docker-compose.yml 
 
-docker-compose up --build
+   ├── nginx/ 
 
-3. Access the services via Nginx
-URL	Response
-http://localhost:8080/service1/ping	{ "service": "service1" }
-http://localhost:8080/service2/hello	{ "service": "service2" }
+        ├── nginx.conf
 
-Replace localhost with your EC2 IP if running on AWS, e.g., http://13.220.209.50:8080/...
+         └── Dockerfile 
 
-🌐 How Routing Works
-Nginx routes incoming requests based on the URL path:
+   ├── service_1/ ← Golang app │ 
 
-/service1/ → forwards to service1:8001
+         └── Dockerfile 
+   
+   ├── service_2/ ← Python app │ 
 
-/service2/ → forwards to service2:8002
-
-This is configured in nginx/default.conf.
-
-🩺 Health Check (Bonus)
-Each service exposes a basic HTTP endpoint:
-
-GET /ping for service1
-
-GET /hello for service2
-
-These return static JSON indicating the service is running.
-
-📁 Project Structure
-
-├── docker-compose.yml
-├── nginx
-│   ├── default.conf
-│   └── Dockerfile
-├── service_1
-│   ├── main.go
-│   └── Dockerfile
-├── service_2
-│   ├── app.py
-│   └── Dockerfile
+         └── Dockerfile 
+   
 └── README.md
 
-👨‍💻 Author
-Satyakiran Padamati
-Email: satyapadamati5@gmail.com
-GitHub: https://github.com/satyapadamati
+
+---
+
+## 🚀 Setup & Execution
+
+### Prerequisites
+
+  Installations:
+
+- [Docker](https://www.docker.com/)
+- [Docker Compose](https://docs.docker.com/compose/)
+- [Git](https://git-scm.com/)
+
+### Steps to Run
+
+1. Clone this repository:
+   
+      git clone https://github.com/your-username/your-repo-name.git
+   
+      cd your-repo-name
+   
+2. Build and start all services:
+
+      docker-compose up --build
+
+3. Access services via your browser:
+
+      http://localhost:8080/service1
+
+      http://localhost:8080/service2
+
+### ⚙️ How It Works
+
+. Nginx listens on port 8080 and routes:
+
+      /service1 → Golang service
+
+      /service2 → Python service
+
+. Each service runs in its own isolated container, using bridge networking.
+
+. Nginx logs incoming requests with timestamps and routes.
+
+
+### 🩺 Health Checks
+
+Both services are configured with basic health checks using curl to ensure availability and reliability during runtime.
+
+
+### 🔍 Logs
+
+Check access logs for requests routed through Nginx:
+
+docker-compose exec nginx cat /var/log/nginx/access.log
+
+
 
 
 
