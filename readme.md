@@ -75,16 +75,11 @@ Email: satyapadamati5@gmail.com
 GitHub: https://github.com/satyapadamati
 
 
-execution screenshots:
+Execution screenshots:
 
-![{0E368E3F-2442-4332-A41D-F2B196554FFA}](https://github.com/user-attachments/assets/c6e41708-388b-4790-b3b0-2ed119ebd7a8)
-![{0E368E3F-2442-4332-A41D-F2B196554FFA}](https://github.com/user-attachments/assets/c6e41708-388b-4790-b3b0-2ed119ebd7a8)
 
-![{7A036DE6-90BB-49B9-8886-99B999703F53}](https://github.com/user-attachments/assets/aa229c87-beed-4b5c-af80-deb6992b2ab1)
-![{7A036DE6-90BB-49B9-8886-99B999703F53}](https://github.com/user-attachments/assets/aa229c87-beed-4b5c-af80-deb6992b2ab1)
 
-![{7C1A4799-38BB-4364-AC24-D0594FB539C0}](https://github.com/user-attachments/assets/f91d814a-9825-44cc-a621-5f3aad704758)
-![{7C1A4799-38BB-4364-AC24-D0594FB539C0}](https://github.com/user-attachments/assets/f91d814a-9825-44cc-a621-5f3aad704758)
+
 
 
 
