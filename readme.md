@@ -2,8 +2,8 @@
 
 This project sets up a reverse proxy using **Nginx** and **Docker Compose** to route traffic to two microservices:
 
-- 🐍 A Python application
-- 🦫 A Golang application
+- A Python application
+- A Golang application
 
 The Nginx container handles incoming HTTP requests and routes them based on the path prefix (`/service1`, `/service2`).
 
@@ -36,7 +36,16 @@ project-root/
 
 ---
 
-## 🚀 Setup & Execution
+### Services and Ports
+
+| Service   | Description                                 | Port |
+|-----------|---------------------------------------------|------|
+| service1  | Go backend, responds with service info      | 8001 |
+| service2  | Python Flask backend, responds with info    | 8002 |
+| nginx     | Reverse proxy, handles all routing          | 8080 |
+
+
+## Setup & Execution
 
 ### Prerequisites
 
