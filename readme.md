@@ -69,9 +69,11 @@ project-root/
 
 3. Access services via your browser:
 
-      http://localhost:8080/service1
+      http://localhost:8080/service1/ping	{ "service": "service1" }
+   
+      http://localhost:8080/service2/hello	{ "service": "service2" }
 
-      http://localhost:8080/service2
+   Replace localhost with your EC2 IP if running on AWS, e.g., http://3.82.203.38:8080/...
 
 ### ⚙️ How It Works
 
