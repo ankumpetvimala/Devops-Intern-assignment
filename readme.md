@@ -75,7 +75,7 @@ project-root/
 
 ### ⚙️ How It Works
 
-. Nginx listens on port 8080 and routes:
+- Nginx listens on port 8080 and routes:
 
   Nginx routes incoming requests based on the URL path
 
