@@ -73,7 +73,8 @@ project-root/
    
       http://localhost:8080/service2/hello	{ "service": "service2" }
 
-   Replace localhost with your EC2 IP if running on AWS, e.g., http://3.82.203.38:8080/...
+   Replace localhost with your EC2 IP if running on AWS, e.g., http://3.82.203.38:8080/service1
+   
 
 ### ⚙️ How It Works
 
