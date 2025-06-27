@@ -103,7 +103,7 @@ These return static JSON indicating the service is running.
 
 Check access logs for requests routed through Nginx:
 
-docker-compose exec nginx cat /var/log/nginx/access.log
+docker-compose exec nginx cat /var/log/nginx/access.log 
 
 
 
