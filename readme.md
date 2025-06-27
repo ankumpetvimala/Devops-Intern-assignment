@@ -77,19 +77,24 @@ project-root/
 
 . Nginx listens on port 8080 and routes:
 
-      /service1 → Golang service
+  Nginx routes incoming requests based on the URL path
 
-      /service2 → Python service
+ /service1/ → forwards to service1:8001 ( Golang service)
 
-. Each service runs in its own isolated container, using bridge networking.
+ /service2/ → forwards to service2:8002 (Python service)
 
-. Nginx logs incoming requests with timestamps and routes.
+ This is configured in nginx/default.conf.
 
-
+  
 ### 🩺 Health Checks
 
-Both services are configured with basic health checks using curl to ensure availability and reliability during runtime.
+Each service exposes a basic HTTP endpoint:
 
+GET /ping for service1
+
+GET /hello for service2
+
+These return static JSON indicating the service is running.
 
 ### 🔍 Logs
 
