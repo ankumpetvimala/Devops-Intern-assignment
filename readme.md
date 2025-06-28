@@ -103,7 +103,11 @@ These return static JSON indicating the service is running.
 
 Check access logs for requests routed through Nginx:
 
-docker-compose exec nginx cat /var/log/nginx/access.log 
+docker-compose logs nginx
+
+## Conclusion 
+
+This project uses Docker to run two services: one in Go and one in Python. NGINX works as a reverse proxy to manage and route requests to each service.
 
 
 
