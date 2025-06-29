@@ -109,7 +109,7 @@ docker-compose logs nginx
 
 This project uses Docker to run two services: one in Go and one in Python. NGINX works as a reverse proxy to manage and route requests to each service.
 
-https://www.loom.com/share/0b03878d36d5435b9220de4eed28eed5?sid=0aaea12f-f70d-4f88-8972-90616c7ab01b
+
 
 
 
